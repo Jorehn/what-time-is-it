@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whats-the-time
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      deployment: whats-the-time
+  template:
+    metadata:
+      labels:
+        deployment: whats-the-time
+    spec:
+      containers:
+      - name: whats-the-time
+        image: gcr.io/PROJECT_ID/IMAGE:TAG
+        ports:
+        - containerPort: 80

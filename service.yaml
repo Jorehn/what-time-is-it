@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: whats-the-time
+spec:
+  selector:
+    deployment: whats-the-time
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 8666
+    targetPort: 8080
